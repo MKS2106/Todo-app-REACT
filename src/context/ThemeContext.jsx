@@ -11,7 +11,9 @@ export function ThemeProvider({ children }) {
     };
     return (
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
+            <div className={theme === "dark" ? "dark" : ""}>
             {children}
+            </div>
         </ThemeContext.Provider>
     );
 }

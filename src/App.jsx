@@ -1,5 +1,5 @@
 import { useState, useContext} from "react";
-// import "./App.css";
+import "./App.css";
 import TodoInput from "./components/ToDoInput";
 import TodoItem from "./components/ToDoItem";
 import TodoList from "./components/ToDoList";
@@ -14,9 +14,9 @@ function AppDisplay(){
   
   return(
     <div className={theme === "dark" ? "dark" : ""}>
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white p-6">
+    <div className=" min-h-screen p-6">
        <h1>ToDo App</h1>
-        <button onClick={toggleTheme} className="mb-4 px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded">
+        <button onClick={toggleTheme}>
           {theme === "light" ? "🌙 Dark" : "☀️ Light"}
         </button>
         <TodoInput />
@@ -32,10 +32,8 @@ function AppDisplay(){
 }
 
 function App() {
-
-
   return (
-    <div className="border">
+    <div>
       {/* <h1 className="font-bold">ToDo App</h1><hr/> */}
        <ThemeProvider>
         <FilterProvider>

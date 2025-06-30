@@ -1,5 +1,5 @@
 @import "tailwindcss";
-/* :root {
+:root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -29,6 +29,10 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+
+  /* new styling for toggle mode */
+   background-color: #fff;
+  color: #213547;
 }
 
 h1 {
@@ -43,9 +47,12 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  /* background-color: #1a1a1a; */
   cursor: pointer;
   transition: border-color 0.25s;
+
+    background-color: #83b1e6;
+  color: #213547;
 }
 button:hover {
   border-color: #646cff;
@@ -54,6 +61,23 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+/* Dark mode */
+.dark {
+  background-color: #242424;
+  color: #fff;
+}
+
+.dark button {
+  background-color: #1a1a1a;
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+.dark button:hover {
+  border-color: #646cff;
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -66,4 +90,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-} */
+}

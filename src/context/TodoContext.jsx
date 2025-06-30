@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { useState, useEffect, createContext } from "react";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 export const TodoContext = createContext([]);
 export const useTodos = () => useContext(TodoContext);
 
 export function TodoProvider({ children }) {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useLocalStorage("todos", []);
 
   //add todo
   const addTodo = (todoName) => {
