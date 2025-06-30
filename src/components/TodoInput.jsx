@@ -11,14 +11,14 @@ function TodoInput() {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="mb-2">
         <input className="border" required
           type="text"
           placeholder="What needs to be done?"
           value={todoText}
           onChange={(e) => setTodoText(e.target.value)} 
         />
-        <button type="submit">Add Todo</button>
+        <button className="ml-4 mr-2 border" type="submit">Add Todo</button>
         {/* <input type="checkbox" checked={false} {...todo.completed} /> */}
         {/* <button onClick={() => deleteTodo(todo.id)}>Delete</button> */}
       </form>
