@@ -10,10 +10,10 @@ function TodoItem({ todo }) {
     setIsEditing(false);
   };
 
-  // const
   return (
     <li className="mt-2 flex">
-      <input className="mr-2"
+      <input
+        className="mr-2"
         type="checkbox"
         checked={todo.completed}
         onChange={() => toggleTodo(todo.id)}
@@ -21,18 +21,33 @@ function TodoItem({ todo }) {
 
       {isEditing ? (
         <form onSubmit={handleEditSubmit}>
-          <input value={newText} required onChange={(e) => setNewText(e.target.value)} />
+          <input
+            value={newText}
+            required
+            onChange={(e) => setNewText(e.target.value)}
+          />
           <button type="submit">Save</button>
         </form>
       ) : (
         <>
-          <span className= {`flex-grow ${
+          <span
+            className={`flex-grow ${
               todo.completed ? "line-through text-gray-500" : ""
-            }`}>{todo.todoName}</span>
-          <button className="ml-4 mr-2 border" onClick={() => setIsEditing(true)}>Edit</button>
+            }`}
+          >
+            {todo.todoName}
+          </span>
+          <button
+            className="ml-4 mr-2 border"
+            onClick={() => setIsEditing(true)}
+          >
+            Edit
+          </button>
         </>
       )}
-      <button className="ml-4 mr-2 border" onClick={() => deleteTodo(todo.id)}>Delete</button>
+      <button className="ml-4 mr-2 border" onClick={() => deleteTodo(todo.id)}>
+        Delete
+      </button>
     </li>
   );
 }
